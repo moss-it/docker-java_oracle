@@ -8,7 +8,7 @@ ENV BUILD 17
 ENV JAVA_HOME /usr/lib/jvm/java-${VERSION}-oracle
 
 RUN dpkg --add-architecture i386 && \
-     apt-get update && apt-get install ca-certificates curl libncurses5:i386 libstdc++6:i386 zlib1g:i386 git-core -y no-install-recommends && \
+     apt-get update && apt-get install ca-certificates curl libncurses5:i386 libstdc++6:i386 zlib1g:i386 git-core -y --no-install-recommends && \
 	curl --silent --location --retry 3 --cacert /etc/ssl/certs/GeoTrust_Global_CA.pem \
 	--header "Cookie: oraclelicense=accept-securebackup-cookie;" \
 	http://download.oracle.com/otn-pub/java/jdk/"${VERSION}"u"${UPDATE}"-b"${BUILD}"/jdk-"${VERSION}"u"${UPDATE}"-linux-x64.tar.gz \
