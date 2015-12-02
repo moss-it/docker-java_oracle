@@ -25,7 +25,7 @@ RUN dpkg --add-architecture i386 && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install Android SDK
-RUN curl --silent --location --retry 3 http://dl.google.com/android/android-sdk_r24.4-linux.tgz \
+RUN curl --silent --location --retry 3 http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz \
     | tar -xz -C /tmp && \
     mkdir -p /usr/local/android-sdk && mv /tmp/android-sdk-linux /usr/local/android-sdk
 
