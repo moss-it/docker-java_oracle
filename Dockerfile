@@ -3,8 +3,8 @@ MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
 
 # Specify the Java version. Change to update the JDK.
 ENV VERSION 8
-ENV UPDATE 65
-ENV BUILD 17
+ENV UPDATE 101
+ENV BUILD 13
 
 # Update PATH.
 ENV JAVA_HOME /usr/lib/jvm/java-${VERSION}-oracle
