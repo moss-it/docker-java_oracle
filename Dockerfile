@@ -1,10 +1,10 @@
-FROM debian
+FROM debian:8
 MAINTAINER Thiago Almeida <thiagoalmeidasa@gmail.com>
 
 # Specify the Java version. Change to update the JDK.
 ENV VERSION 8
-ENV UPDATE 101
-ENV BUILD 13
+ENV UPDATE 111
+ENV BUILD 14
 
 # Update PATH.
 ENV JAVA_HOME /usr/lib/jvm/java-${VERSION}-oracle
@@ -17,6 +17,7 @@ RUN dpkg --add-architecture i386 && \
 	http://download.oracle.com/otn-pub/java/jdk/"${VERSION}"u"${UPDATE}"-b"${BUILD}"/jdk-"${VERSION}"u"${UPDATE}"-linux-x64.tar.gz \
 	| tar xz -C /tmp && \
 	mkdir -p /usr/lib/jvm && mv /tmp/jdk1.${VERSION}.0_${UPDATE} "${JAVA_HOME}" && \
+# Cleaning stuff
 	apt-get autoclean && apt-get --purge -y autoremove && \
 	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
